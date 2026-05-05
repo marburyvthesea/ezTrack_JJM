@@ -1741,7 +1741,7 @@ def PlayVideo(video_dict,display_dict,location):
         frame = cropframe(frame, video_dict['crop'])
         height, width = int(frame.shape[0]), int(frame.shape[1])
         fourcc = 0#cv2.VideoWriter_fourcc(*'jpeg') #only writes up to 20 fps, though video read can be 30.
-        writer = cv2.VideoWriter(os.path.join(os.path.normpath(video_dict['dpath']), 'video_output.avi'), 
+        writer = cv2.VideoWriter(os.path.join(os.path.normpath(video_dict['dpath']), video_dict['file'].rstrip('.avi')+'video_output.avi'), 
                                  fourcc, 20.0, 
                                  (width, height),
                                  isColor=False)
